@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="/jsan/Task/Joose/Core.js"></script>
+	
+		<!-- Ext bridge  -->
+		
+		<link rel="stylesheet" type="text/css" href="/jsan/Task/ExtJS/static/css/ext-all.css">
+		<script type="text/javascript" src="/jsan/Task/ExtJS/Adapter/Ext.js"></script>
+
+        <script type="text/javascript" src="/jsan/JooseX/Meta/Lazy.js"></script>
+		<script type="text/javascript" src="/jsan/JooseX/Bridge/Ext.js"></script>
+		<script type="text/javascript">
+		    JooseX.Bridge.Ext.meta.extend({ does : JooseX.Meta.Lazy })
+			Ext.extend = JooseX.Bridge.Ext.my.extend 
+		</script>
+		
+		<script type="text/javascript" src="/jsan/Task/ExtJS/Debug/All.js"></script>
+		
+		<!-- eof Ext bridge  -->
+		
+		<script type="text/javascript" src="/jsan/JooseX/SimpleRequest.js"></script>
+		<script type="text/javascript" src="/jsan/Task/JooseX/Namespace/Depended/Web.js"></script>
+		
+		<script type="text/javascript" src="/jsan/ExtX/Reference/Slot.js"></script>
+		
+        <script type="text/javascript">
+            JooseX.Namespace.Depended.Manager.my.INC = [ '../lib', '../../lib', '/jsan' ]
+            
+            use([ 'App' ], function () {
+                App.my.run('/')
+            })
+            
+        </script>
+	</head>
+	
+	<body>
+	</body>
+</html>
