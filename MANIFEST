@@ -1,0 +1,21 @@
+inc/Module/Build/Functions.pm
+inc/Module/Build/Functions/DSL.pm
+inc/Module/Build/JSAN/Installable.pm
+inc/Module/JSAN.pm
+inc/Module/JSAN/DSL.pm
+lib/ExtX/Layout/ColumnFit.js
+lib/ExtX/Layout/NBSP.js
+lib/ExtX/Layout/RowFit.js
+MANIFEST			This list of files
+MANIFEST.SKIP
+README.md
+static/ExtX.Layout.ColumnFit.css
+static/ExtX.Layout.RowFit.css
+t/010_column_fit.t.html
+t/010_column_fit.t.js
+t/020_row_fit.t.html
+t/020_row_fit.t.js
+t/index.html
+t/visual/ExtX.Layout.ColumnFit.html
+t/visual/ExtX.Layout.RowFit.html
+TODO
