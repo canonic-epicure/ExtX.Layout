@@ -24,6 +24,8 @@
 		
 		<script type="text/javascript" src="/jsan/ExtX/Reference/Slot.js"></script>
 		
+        <link rel="stylesheet" type="text/css" href="../../static/ExtX.Layout.RowFit.css">
+        
         <script type="text/javascript">
             JooseX.Namespace.Depended.Manager.my.INC = [ '../../lib', '/jsan' ]
             
@@ -32,23 +34,39 @@
                 Ext.onReady(function () {
                 
                     var cont = new Ext.Container({
+                        slots : true,
+                        
+                        style : 'padding : 10px',
+                        
+                        layout : 'rowfit',
                         
                         width : 1000,
-                        height : 1000,
+                        height : 520,
                         
                         layout : 'rowfit',
                         
                         items : [
                             {
                                 xtype : 'nbsp',
-                                height : 100
-                            },
-                            {
-                                xtype : 'nbsp'
+                                slot : 'header',
+                                
+                                height : 100,
+                                
+                                style : 'margin : 10px; background-color : green'
                             },
                             {
                                 xtype : 'nbsp',
-                                height : 100
+                                slot : 'center',
+                                
+                                style : 'margin : 10px; background-color : yellow'
+                            },
+                            {
+                                xtype : 'nbsp',
+                                slot : 'footer',
+                                
+                                height : 100,
+                                
+                                style : 'margin : 10px; background-color : blue'
                             }
                         ],
                         

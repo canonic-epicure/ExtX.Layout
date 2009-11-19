@@ -4,27 +4,28 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'ExtX.Layout.ColumnFit', 'ExtX.Layout.NBSP' ], function () {
+    use([ 'ExtX.Layout.RowFit', 'ExtX.Layout.NBSP' ], function () {
 
         Ext.onReady(function () {
         
             var cont = new Ext.Container({
                 slots : true,
                 
-                width   : 1020,
-                height  : 520,
-                
                 style : 'padding : 10px',
                 
-                layout : 'columnfit',
+                layout : 'rowfit',
+                
+                width : 1020,
+                height : 520,
+                
+                layout : 'rowfit',
                 
                 items : [
                     {
                         xtype : 'nbsp',
-                        slot : 'left',
+                        slot : 'header',
                         
-                        width : 100,
-                        height : 50,
+                        height : 100,
                         
                         style : 'margin : 10px; background-color : green'
                     },
@@ -32,19 +33,15 @@ StartTest(function(t) {
                         xtype : 'nbsp',
                         slot : 'center',
                         
-                        style : 'background-color : yellow',
-                        
-                        width : '100%',
-                        height : 50
+                        style : 'margin : 10px; background-color : yellow'
                     },
                     {
                         xtype : 'nbsp',
-                        slot : 'right',
+                        slot : 'footer',
                         
                         style : 'background-color : blue',
                         
-                        width : 100,
-                        height : '100%'
+                        height : 100
                     }
                 ],
                 
@@ -62,15 +59,12 @@ StartTest(function(t) {
             //==================================================================================================================================================================================
             t.diag("Checking layout - left column")
             
-            var leftEl   = cont.slots.left.getEl()
-            var leftSize = leftEl.getViewSize()
+            var headerEl   = cont.slots.header.getEl()
+            var headerSize = headerEl.getViewSize()
             
-            t.ok(leftSize.width == 100, 'left column was sized correctly - width')
-            t.ok(leftSize.height == 480, 'left column was sized correctly - height')
+            t.ok(headerSize.width == 980, 'header row was sized correctly - width')
+            t.ok(headerSize.height == 100, 'header row was sized correctly - height')
             
-//            t.ok(leftEl.getLeft() == 20, 'left column was positioned correctly - left')
-//            t.ok(leftEl.getTop() == 20, 'left column was positioned correctly - top')
-
             
             //==================================================================================================================================================================================
             t.diag("Checking layout - center column")
@@ -78,20 +72,17 @@ StartTest(function(t) {
             var centerEl   = cont.slots.center.getEl()
             var centerSize = centerEl.getViewSize()
             
-            t.ok(centerSize.width == 780, 'center column was sized correctly - width')
-            t.ok(centerSize.height == 500, 'center column was sized correctly - height')
-            
-//            t.ok(centerEl.getLeft() == 130, 'center column was positioned correctly - left')
-//            t.ok(centerEl.getTop() == 10, 'center column was positioned correctly - top')
+            t.ok(centerSize.width == 980, 'center row was sized correctly - width')
+            t.ok(centerSize.height == 260, 'center row was sized correctly - height')
             
             //==================================================================================================================================================================================
-            t.diag("Checking layout - right column")
+            t.diag("Checking layout - right row")
             
-            var rightEl   = cont.slots.right.getEl()
-            var rightSize = rightEl.getViewSize()
+            var footerEl   = cont.slots.footer.getEl()
+            var footerSize = footerEl.getViewSize()
             
-            t.ok(rightSize.width == 100, 'right column was sized correctly - width')
-            t.ok(rightSize.height == 500, 'right column was sized correctly - height')
+            t.ok(footerSize.width == 1000, 'footer row was sized correctly - width')
+            t.ok(footerSize.height == 100, 'footer row was sized correctly - height')
             
             t.endAsync(async0)
         })
