@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="/jsan/Task/Joose/Core.js"></script>
+	
+		<!-- Ext bridge  -->
+		
+		<link rel="stylesheet" type="text/css" href="/jsan/Task/ExtJS/static/css/ext-all.css">
+		<script type="text/javascript" src="/jsan/Task/ExtJS/Adapter/Ext.js"></script>
+
+        <script type="text/javascript" src="/jsan/JooseX/Meta/Lazy.js"></script>
+		<script type="text/javascript" src="/jsan/JooseX/Bridge/Ext.js"></script>
+		<script type="text/javascript">
+		    JooseX.Bridge.Ext.meta.extend({ does : JooseX.Meta.Lazy })
+			Ext.extend = JooseX.Bridge.Ext.my.extend 
+		</script>
+		
+		<script type="text/javascript" src="/jsan/Task/ExtJS/Debug/All.js"></script>
+		
+		<!-- eof Ext bridge  -->
+		
+		<script type="text/javascript" src="/jsan/JooseX/SimpleRequest.js"></script>
+		<script type="text/javascript" src="/jsan/Task/JooseX/Namespace/Depended/Web.js"></script>
+		
+		<script type="text/javascript" src="/jsan/ExtX/Reference/Slot.js"></script>
+		
+        <script type="text/javascript">
+            JooseX.Namespace.Depended.Manager.my.INC = [ '../lib', '../../lib', '/jsan' ]
+            
+            Ext.onReady(function () {
+                var getSize1 = Ext.get('getSize1')
+                var body = Ext.getBody()
+                
+                getSize1.on('click', function () {
+                    alert(
+                        'getViewSize: ' + Ext.encode(getSize1.getViewSize()) + '\n' + 
+                        'getStyleSize: ' + Ext.encode(getSize1.getStyleSize()) + '\n' + 
+                        'getSize: ' + Ext.encode(getSize1.getSize()) + '\n'
+                    )
+                })
+                
+                
+                var button = new Ext.Button({
+                    text : 'resize',
+                    scale : 'large',
+                    
+                    handler : function () {
+                        getSize1.setSize(80,80)
+                    },
+                    
+                    renderTo : body
+                })
+            })            
+        </script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="getSize.css">
+	</head>
+	
+	<body>
+        <div id='getSize1' class='getSize1'></div>
+        
+        <div class='x-columnlayout-container' style="width : 1000px">
+       
+                <div class='x-column-container' style="width : 100px">
+                    left column, width = 100px
+                </div>
+                
+                <div class='x-column-container' style="width : 50%">
+                    center column, width = 50%
+                </div>
+    
+                <div class='x-column-container' style="width : 100px">
+                    right column, width = 100px
+                </div>
+                
+                <div class="x-clear"></div>
+            
+        </div>
+        
+        
+        <div class='x-htmlcolumn-container' style="width : 1000px">
+       
+                <div class='x-htmlcolumn-column' style="width : 100px">
+                    left column, width = 100px<br>
+                    left column, width = 100px<br>
+                    left column, width = 100px<br>
+                </div>
+                
+                <div class='x-htmlcolumn-secondary' style="margin-left : 100px">
+                    right column, width = whole - 100px<br>
+                    right column, width = whole - 100px<br>
+                    right column, width = whole - 100px<br>
+                </div>
+                
+                <div class="x-clear"></div>
+        </div>
+	</body>
+</html>
