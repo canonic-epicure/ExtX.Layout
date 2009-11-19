@@ -27,26 +27,27 @@
         <script type="text/javascript">
             JooseX.Namespace.Depended.Manager.my.INC = [ '../../lib', '/jsan' ]
             
-            use('ExtX.Layout.ColumnFit', function () {
+            use([ 'ExtX.Layout.RowFit', 'ExtX.Layout.NBSP' ], function () {
 
                 Ext.onReady(function () {
                 
                     var cont = new Ext.Container({
                         
                         width : 1000,
-                        layout : 'columnfit',
+                        height : 1000,
+                        
+                        layout : 'rowfit',
                         
                         items : [
                             {
-                                width : 100,
-                                height : 50
+                                xtype : 'nbsp',
+                                height : 100
                             },
                             {
-                                width : '100%',
-                                height : 50
+                                xtype : 'nbsp'
                             },
                             {
-                                width : 100,
+                                xtype : 'nbsp',
                                 height : 100
                             }
                         ],

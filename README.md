@@ -8,7 +8,7 @@ SYNOPSIS
 ========
 
         var cont = new Ext.Container({
-            layout : ExtX.Layout.RowFit,
+            layout : 'columnfit',
             
             items : [
                 ...
