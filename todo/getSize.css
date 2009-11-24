@@ -56,3 +56,25 @@
 	
 	background-color: green;
 }
+
+
+.gridTwoLeft {padding-left:12em;}  
+.gridTwoLeft .wrapper {background: green;}  
+.gridTwoLeft .wrapper .col1 {width:100%; float:right; }  
+.gridTwoLeft .wrapper .col2 {margin-left:-12em; width:12em; float:right; background: yellow;}  
+.gridTwoLeft .wrapper .col1 .paddingBox {padding:1.5em 2em;}  
+.gridTwoLeft .wrapper .col2 .paddingBox {padding:1.5em 2em;}
+
+
+.gridTwoEven {background:#666666; padding-right:30%;}
+.gridTwoEven .wrapper {background:#EEEEEE;}
+.gridTwoEven .bordered {border-right:1px solid red;}
+.gridTwoEven .wrapper .col1 {width:100%; float:left;}
+.gridTwoEven .wrapper .col2 {margin-right:-50%; width:50%; float:left;}
+.gridTwoEven .wrapper .col1 .paddingBox {padding:1.5em 2em;}
+.gridTwoEven .wrapper .col2 .paddingBox {padding:1.5em 2em;} 
+
+
+.background {
+	background: blue;
+}
