@@ -1,0 +1,17 @@
+#container {
+    display: table;
+    width: 100%;
+}
+
+#dynamic_height_giver {
+    display: table-cell; 
+    width: 200px;
+    background: #0d0;
+}
+
+#middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+

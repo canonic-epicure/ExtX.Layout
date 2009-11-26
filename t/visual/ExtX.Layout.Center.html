@@ -10,11 +10,7 @@
 
         <script type="text/javascript" src="/jsan/JooseX/Meta/Lazy.js"></script>
 		<script type="text/javascript" src="/jsan/JooseX/Bridge/Ext.js"></script>
-		<script type="text/javascript">
-		    //JooseX.Bridge.Ext.meta.extend({ does : JooseX.Meta.Lazy })
-			Ext.extend = JooseX.Bridge.Ext.my.extend 
-		</script>
-		
+		<script type="text/javascript" src="/jsan/JooseX/Bridge/Ext/LazyConvertor.js"></script>
 		<script type="text/javascript" src="/jsan/Task/ExtJS/Debug/All.js"></script>
 		
 		<!-- eof Ext bridge  -->
@@ -24,35 +20,30 @@
 		
 		<script type="text/javascript" src="/jsan/ExtX/Reference/Slot.js"></script>
         
-        <link rel="stylesheet" type="text/css" href="../../static/ExtX.Layout.ColumnFit.css">
+        <link rel="stylesheet" type="text/css" href="../../static/ExtX.Layout.Center.css">
 		
         <script type="text/javascript">
             JooseX.Namespace.Depended.Manager.my.INC = [ '../../lib', '/jsan' ]
             
-            use([ 'ExtX.Layout.ColumnFit', 'ExtX.Layout.NBSP' ], function () {
+            use([ 'ExtX.Layout.Center', 'ExtX.Layout.NBSP' ], function () {
 
                 Ext.onReady(function () {
                 
-                    var cont = new Ext.Container({
+                    var cont = new Ext.Viewport({
                         
-                        width : 1000,
-                        layout : 'columnfit',
+                        layout : 'center',
                         
                         items : [
                             {
-                                width : 100,
-                                height : 50
-                            },
-                            {
-                                height : 50
-                            },
-                            {
-                                width : 100,
-                                height : 100
+                                title : 'Centered panel',
+                                width : 500,
+                                height : 300
                             }
                         ],
                         
-                        renderTo : Ext.getBody()
+                        fireResize : function () {
+                            this.doLayout()
+                        }
                     })
                 })
             
