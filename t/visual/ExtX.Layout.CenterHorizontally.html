@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="/jsan/Task/Joose/Core.js"></script>
+	
+		<!-- Ext bridge  -->
+		
+		<link rel="stylesheet" type="text/css" href="/jsan/Task/ExtJS/static/css/ext-all.css">
+		<script type="text/javascript" src="/jsan/Task/ExtJS/Adapter/Ext.js"></script>
+
+        <script type="text/javascript" src="/jsan/JooseX/Meta/Lazy.js"></script>
+		<script type="text/javascript" src="/jsan/JooseX/Bridge/Ext.js"></script>
+		<script type="text/javascript" src="/jsan/JooseX/Bridge/Ext/LazyConvertor.js"></script>
+		<script type="text/javascript" src="/jsan/Task/ExtJS/Debug/All.js"></script>
+		
+		<!-- eof Ext bridge  -->
+		
+		<script type="text/javascript" src="/jsan/JooseX/SimpleRequest.js"></script>
+		<script type="text/javascript" src="/jsan/Task/JooseX/Namespace/Depended/Web.js"></script>
+		
+		<script type="text/javascript" src="/jsan/ExtX/Reference/Slot.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="../../static/ExtX.Layout.CenterHorizontally.css">
+		
+        <script type="text/javascript">
+            JooseX.Namespace.Depended.Manager.my.INC = [ '../../lib', '/jsan' ]
+            
+            use([ 'ExtX.Layout.CenterHorizontally', 'ExtX.Layout.NBSP' ], function () {
+
+                Ext.onReady(function () {
+                
+                    var cont = new Ext.Viewport({
+                        
+                        layout : 'center-h',
+                        
+                        items : [
+                            {
+                                title : 'Centered panel',
+                                width : 500,
+                                height : 800,
+                                
+                                layout : 'center-h',
+                                
+                                items : [
+                                    {
+                                        title : 'Nested centered panel',
+                                        width : 200,
+                                        height : 500,
+                                    }
+                                ]
+                            }
+                        ],
+                        
+                        fireResize : function () {
+                            this.doLayout()
+                        }
+                    })
+                })
+            
+            })
+        </script>
+        
+        
+	</head>
+	
+	<body>
+	</body>
+</html>
