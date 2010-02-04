@@ -1,0 +1,8 @@
+.x-center-h-layout-ct {
+	text-align : center;
+}
+
+.x-center-h-layout-child {
+    margin          : 0 auto;
+    text-align      : left;
+}
