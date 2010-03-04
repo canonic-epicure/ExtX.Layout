@@ -53,4 +53,4 @@ ExtX.Layout-0.01
 ^\.git\b
 ^\.externalToolBuilders\b
 
-^todo\b
+^todo\b^MYMETA.yml$
