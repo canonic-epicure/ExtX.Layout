@@ -1,11 +1,4 @@
-_build
-Build
-blib
+.build
 .project
 .externalToolBuilders
-MANIFEST.bak
-doc
-META.json
-Makefile.PL
-Makefile
-inc
+ExtX-Layout-*
