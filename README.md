@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/SamuraiJack/ExtX.Layout.png)](http://travis-ci.org/SamuraiJack/ExtX.Layout)
 Name
 ====
 
